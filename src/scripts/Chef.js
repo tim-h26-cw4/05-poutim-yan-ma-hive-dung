@@ -7,12 +7,8 @@ export default class Chef {
     this.init();
   }
   init() {
-    const poutine = this.element.querySelectorAll('.js-poutine');
-    for (let i = 0; i < poutine.length; i++) {
-      const poutines = poutine[i];
-      const instance = new Poutine();
-      this.menu.push(instance);
-    }
+    const instance = new Poutine(this.element);
+    this.menu.push(instance);
     this.element.addEventListener('click', this.sendOrder.bind(this));
   }
   sendOrder() {}
