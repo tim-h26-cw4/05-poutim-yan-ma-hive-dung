@@ -2,8 +2,10 @@ export default class Poutine {
   constructor(element) {
     this.element = element;
     this.types = document.querySelectorAll('.js-type');
-    this.selectedType = 'e';
-    this.updatePhoto();
+    this.options = {
+      name: 'poulet',
+    };
+    this.selectedType = '';
 
     this.init();
   }
@@ -20,18 +22,15 @@ export default class Poutine {
     for (let i = 0; i < this.types.length; i++) {
       const type = this.types[i];
       type.classList.remove('is-active');
-
-      this.selectedType = type;
+      this.selectedType = event.currentTarget.innerText;
     }
     bouton.classList.add('is-active');
+    this.updatePhoto();
   }
   updatePhoto() {
     const image = document.querySelector('.js-image');
-
     image.classList.add('is-active');
-    if ('poulet' in this.element.dataset) {
-      this.selectedType = poulet;
-      image.src = `assets/images/${this.selectedType}.png`;
-    }
+
+    image.src = `assets/images/${this.selectedType}.png`;
   }
 }
