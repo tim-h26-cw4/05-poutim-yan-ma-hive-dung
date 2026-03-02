@@ -2,11 +2,9 @@ export default class Poutine {
   constructor(element) {
     this.element = element;
     this.types = document.querySelectorAll('.js-type');
-    this.selectedType = 'poutine';
+    this.selectedType = 'e';
     this.updatePhoto();
-    this.option = {
-      name: 'poulet',
-    };
+
     this.init();
   }
   init() {
@@ -29,7 +27,11 @@ export default class Poutine {
   }
   updatePhoto() {
     const image = document.querySelector('.js-image');
+
     image.classList.add('is-active');
-    image.src = `assets/images/${this.selectedType}.png`;
+    if ('poulet' in this.element.dataset) {
+      this.selectedType = poulet;
+      image.src = `assets/images/${this.selectedType}.png`;
+    }
   }
 }
