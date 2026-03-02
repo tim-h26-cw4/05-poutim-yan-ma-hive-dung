@@ -4,6 +4,9 @@ export default class Poutine {
     this.types = document.querySelectorAll('.js-type');
     this.selectedType = 'poutine';
     this.updatePhoto();
+    this.option = {
+      name: 'poulet',
+    };
     this.init();
   }
   init() {
@@ -14,14 +17,15 @@ export default class Poutine {
     }
   }
 
-  selectType() {
+  selectType(event) {
+    const bouton = event.currentTarget;
     for (let i = 0; i < this.types.length; i++) {
       const type = this.types[i];
-
       type.classList.remove('is-active');
-      type.classList.add('is-active');
+
       this.selectedType = type;
     }
+    bouton.classList.add('is-active');
   }
   updatePhoto() {
     const image = document.querySelector('.js-image');
