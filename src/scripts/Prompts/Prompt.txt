@@ -1,0 +1,3 @@
+utilisation de chatGpt pour comprendre la raison pourquoi total=4, mais pas à 0. Modifier mon code à ma guise et non par la solution chatGPT parce qu'il offre des solutions qui
+ne sont pas vraiment en lien avec le cours et essayer de faire à ma façon mon code
+https://chatgpt.com/share/69a87f8c-0bd4-8008-9198-e2294c9140c9
