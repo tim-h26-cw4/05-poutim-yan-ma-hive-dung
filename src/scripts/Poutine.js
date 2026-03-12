@@ -12,10 +12,10 @@ export default class Poutine {
   }
 
   selectType(event) {
-    this.bouton = event.currentTarget;
+    const bouton = event.currentTarget;
     this.type.classList.remove('is-active');
     this.type.classList.add('is-active');
-    this.selectedType = this.bouton.innerText;
+    this.selectedType = bouton.innerText;
     this.updatePhoto();
   }
   updatePhoto() {
